@@ -31,13 +31,54 @@
 
     <section id="works">
         <h2>Роботи</h2>
-        <p id="projects-count">Завантаження списку робіт...</p>
 
-        <div id="gallery" class="cards">
-            <article class="card placeholder-card">
-                <h3>Завантаження...</h3>
-                <p>Оновлення даних галереї...</p>
-            </article>
+        <div class="filter-wrapper">
+            <label for="category-filter"><strong>Фільтр за категорією:</strong></label>
+            <select id="category-filter">
+                <option value="all">Усі категорії</option>
+                <option value="Фотографія">Фотографія</option>
+                <option value="Дизайн">Дизайн</option>
+            </select>
+        </div>
+
+        <p id="projects-count">Усього робіт: 4</p>
+
+        <div id="gallery" class="cards"></div>
+
+        <div class="form-container">
+            <h3>Додати нову роботу</h3>
+            <form id="add-project-form" novalidate>
+                <div class="form-group">
+                    <label for="project-title">Назва проєкту:</label>
+                    <input type="text" id="project-title" name="title" required placeholder="Наприклад: Брендбук студії">
+                </div>
+
+                <div class="form-group">
+                    <label for="project-year">Рік створення:</label>
+                    <input type="number" id="project-year" name="year" required min="2000" placeholder="2026">
+                </div>
+
+                <div class="form-group">
+                    <label for="project-category">Категорія:</label>
+                    <select id="project-category" name="category" required>
+                        <option value="">Оберіть категорію...</option>
+                        <option value="Фотографія">Фотографія</option>
+                        <option value="Дизайн">Дизайн</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-desc">Короткий опис:</label>
+                    <input type="text" id="project-desc" name="description" required placeholder="Стислий опис концепту">
+                </div>
+
+                <div class="form-group">
+                    <label for="project-image">Посилання на зображення (URL):</label>
+                    <input type="url" id="project-image" name="image" placeholder="https://images.unsplash.com/...">
+                </div>
+
+                <button type="submit" class="btn-submit">Додати проєкт</button>
+            </form>
         </div>
     </section>
 
